@@ -4,34 +4,35 @@
 // The u's and e's are automatically doubled
 
 // Step 1. 
-var input = 'Prepare to die.'
+var input = 'Prepare to die.';
 
 // Step 2.
-const vowels = ['a', 'e', 'i', 'o', 'u']
+const vowels = ['a', 'e', 'i', 'o', 'u'];
 
 // Step 3.
-var resultArray = []
+const resultArray = []
 
 // Step 4 - 9
 for (let index = 0; index < input.length; index++) {
-    const elementInput = input[index];
-    // console.log(input.length);
+    const letter = input[index].toLowerCase();
+    // console.log(letter);
 
-    for (let index = 0; index < vowels.length; index++) {
-        const elementVowels = vowels[index];
-        // console.log(index);
-        if (input[index] === elementVowels) {
-            resultArray.push(elementVowels)
-            console.log(elementVowels)
-        }
-        // Step 10 - 11
-        if (input[index] === 'e' || 'u') {
-            resultArray.push(input[index])
+    // Step 10 - 11
+    if (letter === 'e' || letter === 'u') {
+        resultArray.push(letter);
+    }
+
+    for (let x = 0; x < vowels.length; x++) {
+        const vowel = vowels[x];
+        // console.log(letter);
+        if (letter === vowel) {
+            resultArray.push(letter);
+            console.log(letter);
         }
     }
+}
+
+    const resultString = resultArray.join('').toUpperCase;
+
 // Step 12
 console.log(resultArray);
-
-const resultsString = resultArray.join().toUpperCase();
-
-}
